@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Import font*/
+@font-face {
+    font-family: Burbank;
+    src: url(fonts/Burbank.otf);
+}
+body{background: black;font-family: Burbank;}
+/*Background animation*/
+.back{
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)), url(images/bg.jpg) no-repeat bottom;
+    animation: blur-out 2s ease-out forwards;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+}
+.back-blurry{
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)),url(images/bg-blurry.jpg) no-repeat bottom;
+    animation: blur 2s ease-out forwards;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+}
+
+.menu{
+    width: 100%;
+    background: black;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    box-sizing: border-box;
+    animation: blur-out-menu 2s ease-out forwards;
+    opacity: 0.8;
+}
+.menu:hover{
+    opacity: 1;
+}
+.menu h2{
+    z-index: 1;
+    color: #fff; 
+    padding-top: .9%;
+    font-size: 3.5em;
+    float: left;
+}
+ .menu:hover h2{
+    padding-top:1%;
+    font-size: 4em;
+}
+/*Slow down the animation of menu elements*/
+.menu,.menu:hover,.menu h2,.menu:hover h2,.menu img,.menu:hover img,menu-logo{
+     transition-duration: .5s;
+     transition-timing-function: ease-in;
+}
+.image{
+    float:left;
+    height: 20%;
+    width: auto;
+    box-sizing: border-box;
+}
+.image img{
+    height: 9%;
+}
+.menu:hover img{
+    height: 10%;
+}
+.list_menu{
+    box-sizing: border-box;
+    float:right;
+    width: 50%;
+}
+.list_menu li{
+    float: left;
+    border-left: 1px solid white;
+}
+.list_menu li a{
+    color: orange;
+	display: inline-block;
+	text-decoration: none;
+	padding: .11em .5em;
+	font-size: 3em;
+    border-bottom: 2px solid transparent;
+}
+.list_menu li a:hover{
+    border-bottom: 2px solid red;
+    transition-duration: 1s;
+}
+.text{
+    position:absolute;
+    top: 30%;
+    left: 40%;
+    width: 50%;
+    padding: 70px;
+    float: right;
+}
+.text h1{
+    font-size: 6em;
+    animation: fade-in 1s .5s ease-in forwards;
+   
+    float: right;
+}
+.text .he1 h1{
+    animation: fade-in 1s .5s ease-in forwards;
+    color: #1AC2FE;
+     opacity: 0;
+}
+.text .he2 h1{
+    animation: fade-in 1s 1.5s ease-in forwards;
+    margin-left: 10%;
+    color: #C9CAD8;
+    opacity: 0;
+}
+.text .he3 h1{
+    animation: fade-in 1s 2s ease-in forwards;
+    margin-left: 20%;
+    color: #E6BB0D;
+    opacity: 0;
+}
+/*Vibrate of Hover*/
+.text .he1:hover,.text .he2:hover,.text .he3:hover{
+    animation:shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+    opacity: 1;
+    cursor: url("images/cursor.png"), pointer;
+}
+.text .videobutton{
+    animation: fade-in 1s 2.25s ease-in forwards;
+    opacity: 0;
+    margin-left: 50%;
+    
+}
+.videobutton:hover {
+    cursor: pointer;
+   
+}
+.videobutton:hover .play{
+    background: #FAAB13;
+    color: aliceblue;
+    transition-duration: .3s;
+    cursor: pointer;
+    animation: zoom-in-out 1s ease-in-out infinite forwards;
+}
+.videobutton:hover h2{
+    color: #FAAB13;
+    transition-duration: .3s;
+}
+
+.play{
+    border-radius: 100%;
+    padding-left: 3%;
+    padding-right: 1.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-right: 1.5%;
+    float: left;
+    font-size: 1.3em;
+    text-align: center;
+    background: rgba(255,255,255,0.8);
+    border: 0;
+    transition-duration: .3s;
+}
+.text h2{
+    float: left;
+    color: aliceblue;
+    margin-top: 2%;
+    transition-duration: .3s;
+}
+.down-arrow{
+    position: absolute;
+    bottom: 5%;;
+    left: 50%;
+    color: aliceblue;
+    font-size: 5em;
+    opacity: 0;
+    animation: pulse 1.5s 3s ease-in forwards;
+    animation-iteration-count: infinite;
+}
+.video-wrap{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 100%;
+}
+.video{
+    position: sticky;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)),url(images/bg2.jpg) no-repeat;
+    background-size: cover;
+    box-shadow:  -5px -10px 40px 10px #333333;
+}
+.video iframe{
+    margin-top: 10%;
+    margin-left: 41%;
+}
+.live-feeds{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 150%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)),url(images/bg3.jpg) no-repeat;
+    background-size: cover;
+    box-shadow:  -5px -10px 40px 10px #333333;
+}
+.twitter{
+    padding-left: 3%;
+    float: left;
+    opacity: .9;
+    position: absolute;
+    top:5%;
+    width: 45%;
+    box-sizing: border-box;
+    padding-top: 10%;
+    height: 70%;
+}
+.youtube{
+    float:left;
+    position: absolute;
+    top:5%;
+    left: 52%;
+    width: 45%;
+    height: 70%;
+    box-sizing: border-box;
+    padding-top: 10%;
+}
+.youtube iframe{
+    border:0;
+}
+.footer{
+    height: 25%;
+    width: 100%;
+    background: rgba(42,42,42,.9);
+    box-sizing: border-box;
+    position: absolute;
+    top: 80%;
+    padding: 2%;
+    color: rgb(204,204,204);
+}
+.footer .icons{
+    font-size: 2em;
+}
+.footer i{
+    padding-right: .7%;
+}
+.left, .right{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+.icons{
+    float:left;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 2%;
+}
+.left-column, .right-column{
+    width: 20%;
+    padding: 2%;
+    float: left;
+    box-sizing: border-box;
+}
+.footer a{
+    text-decoration: none;
+    color: rgb(204,204,204);
+}
+.footer h2{
+    margin-top: .3em;
+}
+.clear{clear: both;}
+
+/*For Background*/
+@keyframes blur{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes blur-out{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/*For Menu*/
+@keyframes blur-out-menu{
+    0%{opacity: 0;}
+    100%{opacity: .8;}
+}
+/*For elements entrance*/
+@keyframes come-into-view{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*For Down Arrow*/
+@keyframes pulse{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/*For Play button*/
+@keyframes zoom-in-out{
+     0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+}
+@keyframes shake {
+  0%, 80%, 100%{
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  10%, 70% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  20%, 40%, 60% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  30%, 50% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

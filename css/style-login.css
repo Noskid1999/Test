@@ -1,0 +1,109 @@
+*{
+	box-sizing: border-box;
+	color: #ffffff;
+}
+body{
+	margin:0;
+	padding:0;
+	height: 100%;
+}
+#particles-js{
+	height: auto;
+	width: 100%;
+	background: #222;
+	position: fixed;
+	z-index: -1;
+}
+#wrapper{
+	height: 100%;
+	width:auto;
+	margin: auto;	
+}
+#user-wrapper{
+	width: 15%;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+.format{
+	margin:auto;
+	border-radius: 25px;
+	background: #111;
+	height: auto;
+	width: 50%;
+	opacity: 0;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	animation: fade-in 2s .5s ease-in forwards;
+}
+#form-wrapper{
+	width: 100%;
+	padding: 0px 25%;
+}
+.pad-bottom-14{padding-bottom: 14px;}
+.pad-bottom-45{padding-bottom: 45px;}
+.mar-bottom-14{margin-bottom: 14px;}
+.mar-bottom-45{margin-bottom: 45px;}
+.form-title{
+	font-family: Calibri;
+	display: block;
+	font-size: 45px;
+	text-align: center;
+}
+.form-normal{
+	font-family: Calibri;
+	display: block;
+	font-size: 23px;
+}
+.form-input{
+	font-family: Calibri;
+    font-size: 19px;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    padding: 0 7px 0 43px;
+    border: 0;
+}
+/*Remove a blue outline when selected*/
+input:focus, textarea:focus {outline: none;}
+/*Remove the placeholder text in the input field when focused*/
+input:focus::-webkit-input-placeholder{color:transparent;transition: 0.5s;}
+input:focus:-moz-placeholder { color:transparent; transition: 0.5s;} /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; transition: 0.5s;} /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; transition: 0.5s; } /* IE 10+ */
+
+.border-b{border-bottom: 2px solid #d9d9d9;}
+.placeholder{position: relative;}
+.placeholder i{
+	position: absolute;
+	top: 35px;
+}
+.placeholder button{
+	font-family: Calibri;
+    font-size: 30px;
+	border-radius: 25px;
+	background: transparent;
+	width: 100%;
+	text-align: center;
+}
+.placeholder button:hover{
+	background: #d3d3d3;
+	color: #000000;
+	transition: 0.5s;
+}
+
+@keyframes fade-in{
+	0%{
+		opacity: 0;
+		transform: translateY(-4em);
+	}
+	100%{
+		opacity: 0.8;
+		transform: translate(0em);
+	}
+}

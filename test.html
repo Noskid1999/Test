@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random image</title>
+	<script type="text/javascript">
+		var i=0;
+		var myPic=["images/thumbnails/ar.jpg","images/thumbnails/ar2.jpg","images/thumbnails/explosives.jpg","images/thumbnails/shotgun.jpg","images/thumbnails/sniper.jpg"];
+		function changePic(){
+			i++;
+			document.getElementById("myPicture").src=myPic[i];
+			if(i==myPic.length){i=0;}
+		}
+		
+	</script>
+	
+</head>
+<body>
+	<div class></div>
+	<img src="images/thumbnails/ar.jpg" id="myPicture"/>
+	<button onclick="changePic()"></button>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random image</title>
+	<script type="text/javascript">
+		var i=0,j=1,h=4;
+		var myPic=["images/full/ar1.png","images/full/ar2.png","images/full/explosives.png","images/full/shotgun.png","images/full/sniper.png"];
+        var thumbPic=["images/thumbnails/ar1.jpg","images/thumbnails/ar2.jpg","images/thumbnails/explosives.jpg","images/thumbnails/shotgun.jpg","images/thumbnails/sniper.jpg"];
+		function changePicInc(){
+            h++;
+			i++;
+            j++;
+//            check overflow
+			if(h==myPic.length){h=0;}
+            if(i==myPic.length){i=0;}
+            if(j==myPic.length){j=0;}
+            
+//            change the main pic
+            document.getElementById("myPicture").src=myPic[i];
+            
+//            change the hover img
+            document.getElementById("nextPic").onmouseover=function(){
+                this.style.background="url("+thumbPic[j]+")";
+                this.style.backgroundSize="cover";
+                this.style.backgroundPosition= "right";
+            }
+            document.getElementById("nextPic").onmouseout=function(){
+                this.style.background="url("+"images/right.svg"+")";
+            }
+                
+            
+		}
+		
+	</script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .imgWrap{
+            position: absolute;
+            left: 15%;
+            top:25%;
+            height: 50%;
+            width: 70%;
+            box-sizing: border-box;
+            opacity: 0.7;
+        }
+        .rightButtonWrap{
+            position: absolute;
+            top: 50%;
+            left: 85%;
+        }
+        #myPicture{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #nextPic{
+            height: 100px;
+            width: 100px;
+            background: url("images/right.svg");
+            border-radius: 100%;
+            border: 0;
+            transition-duration: .5s;
+        }
+        #nextPic:hover{
+            background: url("images/thumbnails/ar2.jpg");
+            background-size: cover;
+            background-position: right;
+            transform: scale(1.25);
+            transition-duration: 1s;
+        }
+    </style>
+	
+</head>
+<body>
+    <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PBJGFBzOT-8" frameborder="0" allowfullscreen></iframe>
+	<div class="imgWrap">
+        <img src="images/full/ar1.png" id="myPicture" height="100%"/>
+    </div>
+    <div class="rightButtonWrap">
+        <button onclick="changePicInc()" id="nextPic"></button>
+    </div>
+</body>
+</html>
